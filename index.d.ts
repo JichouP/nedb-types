@@ -80,8 +80,7 @@ export type SortQuery<Doc> = Partial<Record<keyof Doc, -1 | 1>> &
     Partial<Record<DeepKey<Doc>, 1 | -1>>;
 
 export type Projection<Doc> =
-    | ({ _id?: 1 | 0 } & Record<keyof Doc, 0> & Record<DeepKey<Doc>, 0>)
-    | ({ _id?: 1 | 0 } & Record<keyof Doc, 1> & Record<DeepKey<Doc>, 1>);
+    | ({ _id?: 1 | 0 } & Partial<Record<keyof Doc, 0 | 1>> & Partial<Record<DeepKey<Doc>, 0 | 1>>)
 
 export type UpdateOperators<Doc> = {
     $set: { [K in keyof Omit<Doc, '_id'>]?: Doc[K] } & Record<DeepKey<Doc>, any>;
