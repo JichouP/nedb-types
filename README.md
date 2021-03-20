@@ -3,8 +3,13 @@ this is a work in progress if you have a comment open an issue in this repo
 
 ---
 ### Install
-```sh
-npm i ramiroaisen/nedb-types
+Add this in your `package.json`
+```json
+{
+  "devDependencies": {
+    "@types/nedb": "git+ssh://git@github.com/JichouP/nedb-types.git"
+  }
+}
 ```
 
 
